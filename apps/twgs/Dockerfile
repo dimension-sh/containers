@@ -14,7 +14,7 @@ RUN dpkg --add-architecture i386 && \
     apt-get update && \
     apt install --install-recommends winehq-stable
 
-COPY startapp.sh /startapp.sh
+COPY ./apps/twgs/startapp.sh /startapp.sh
 
 LABEL \
   org.opencontainers.image.title="TWGS" \
