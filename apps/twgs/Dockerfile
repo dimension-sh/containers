@@ -9,7 +9,7 @@ ENV APP_NAME="TWGS"  \
 # Install Wine
 RUN dpkg --add-architecture i386 && \
     apt-get update && \
-    apt-get install -y wine-development win32-development && \
+    apt-get install -y wine win32 && \
 
 COPY startapp.sh /startapp.sh
 
