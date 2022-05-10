@@ -8,8 +8,8 @@ ENV APP_NAME="TWGS"  \
 
 # Install Wine
 RUN dpkg --add-architecture i386 && \
-    apt-get install wget gnupg \
-    wget -qO- https://dl.winehq.org/wine-builds/winehq.key | apt-key add - \
+    apt-get install curl gnupg && \
+    curl https://dl.winehq.org/wine-builds/winehq.key | apt-key add - \
     apt install software-properties-common && \
     add-apt-repository 'deb https://dl.winehq.org/wine-builds/debian/ bullseye main' \
     apt-get update && \
