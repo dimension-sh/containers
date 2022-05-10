@@ -8,8 +8,11 @@ ENV APP_NAME="TWGS"  \
 
 # Install Wine
 RUN dpkg --add-architecture i386 && \
+    wget -qO- https://dl.winehq.org/wine-builds/winehq.key | apt-key add - \
+    apt install software-properties-common && \
+    add-apt-repository 'deb https://dl.winehq.org/wine-builds/debian/ bullseye main' \
     apt-get update && \
-    apt-get install -y wine win32 && \
+    apt install --install-recommends winehq-stable
 
 COPY startapp.sh /startapp.sh
 
